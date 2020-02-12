@@ -2,6 +2,7 @@ import { CodeSurfer } from "code-surfer"
 import oceanicNext  from "./theme"
 import {Appear, Notes} from 'mdx-deck';
 import 'prismjs/components/prism-shell-session'
+import { Video } from './components'
 export const theme = oceanicNext
 
 # Deep dive into CLI Builders
@@ -270,8 +271,7 @@ function commandBuilder(
 
 ---
 
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/AG4OpNXFN4o?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<Video src="command-builder-2.mov" />
 
 
 ---
@@ -304,15 +304,11 @@ function extendExisitingBuilder(
   const targetSpec = targetFromTargetString(
     options.browserTarget
   );
-  context.builder.builderName = "browser";
 
 }
 ```
 
 ```diff subtitle="Returns the target, builder, and config" 7:9
-```
-
-```diff subtitle="A hack to work run to builder 🙈" 10
 ```
 
 
@@ -326,7 +322,6 @@ function extendExisitingBuilder(
   const targetSpec = targetFromTargetString(
     options.browserTarget
   );
-  context.builder.builderName = "browser";
 
   return forkJoin(
     from(context.getTargetOptions(targetSpec)),
@@ -336,10 +331,10 @@ function extendExisitingBuilder(
 ```
 
 
-```diff subtitle="Get the options listed in angular.json" 13
+```diff subtitle="Get the options listed in angular.json" 12
 ```
 
-```diff subtitle="Get the builder name we want to run" 14
+```diff subtitle="Get the builder name we want to run" 13
 ```
 
 ```typescript
@@ -352,7 +347,6 @@ function extendExisitingBuilder(
   const targetSpec = targetFromTargetString(
     options.browserTarget
   );
-  context.builder.builderName = "browser";
 
   return forkJoin(
     from(context.getTargetOptions(targetSpec)),
@@ -371,7 +365,7 @@ function extendExisitingBuilder(
 ```
 
 
-```diff subtitle="Validates public options with internals" 18:21
+```diff subtitle="Validates public options with internals" 17:20
 ```
 
 ```typescript
@@ -384,7 +378,6 @@ function extendExisitingBuilder(
   const targetSpec = targetFromTargetString(
     options.browserTarget
   );
-  context.builder.builderName = "browser";
 
   return forkJoin(
     from(context.getTargetOptions(targetSpec)),
@@ -433,7 +426,7 @@ export function extendBuilder(builder) {
 }
 ```
 
-```ts 1:42
+```ts 1:41
 export default createBuilder(extendExisitingBuilder);
 
 function extendExisitingBuilder(
@@ -443,7 +436,6 @@ function extendExisitingBuilder(
   const targetSpec = targetFromTargetString(
     options.browserTarget
   );
-  context.builder.builderName = "browser";
 
   return forkJoin(
     from(context.getTargetOptions(targetSpec)),
@@ -483,7 +475,11 @@ export function extendBuilder(builder) {
 ---
 
 
-# NyanProgress DEMO
+<Video src="extend-builder.mov" />
+
+---
+
+### So, what have we learned
 
 ---
 
@@ -501,7 +497,7 @@ export function extendBuilder(builder) {
 
 <CodeSurfer>
 
-```ts subtitle="819 LOC, plus imports and utils"  title="@angular-devkit/build-angular:browser"
+```ts subtitle="~820 LOC, plus imports and utils"  title="@angular-devkit/build-angular:browser"
 export function buildWebpackBrowser(
   options: BrowserBuilderSchema,
   context: BuilderContext,
@@ -530,16 +526,19 @@ The default browser builder for Angular is great example of a complex builder. I
 
 ---
 
-## Some great example
-
-- [@angular-builders/jest](https://www.npmjs.com/package/@angular-builders/jest)
-- [@angular-builders/timestamp](https://www.npmjs.com/package/@angular-builders/timestamp)
-- [@angular-builders/custom-webpack](https://www.npmjs.com/package/@angular-builders/custom-webpack)
-- [Minko Sample repo](https://github.com/mgechev/cli-builders-demo)
+Plus there's type to follow!
 
 ---
 
-[@ionic/angular-toolkit](https://github.com/ionic-team/angular-toolkit)
+## Some great example
+- [mgechev/cli-builders-demo](https://github.com/mgechev/cli-builders-demo)
+- [@angular-builders/jest](https://www.npmjs.com/package/@angular-builders/jest)
+- [@angular-builders/timestamp](https://www.npmjs.com/package/@angular-builders/timestamp)
+- [@angular-builders/custom-webpack](https://www.npmjs.com/package/@angular-builders/custom-webpack)
+
+---
+
+# [@ionic/angular-toolkit](https://github.com/ionic-team/angular-toolkit)
 
 ---
 

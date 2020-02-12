@@ -19,13 +19,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -83,13 +78,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           }
         },
@@ -101,9 +91,7 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -118,7 +106,7 @@
             }
           }
         },
-       "extend-build": {
+        "extend-build": {
           "builder": "@bionic/builders:extend-build",
           "options": {
             "browserTarget": "demo-app:build"
@@ -128,18 +116,22 @@
               "browserTarget": "demo-app:build:production"
             }
           }
-       },
+        },
         "command-build": {
           "builder": "@bionic/builders:custom-build",
           "options": {
             "command": "ls",
-            "args": ["-al"]
+            "args": ["-la"]
           },
           "configurations": {
-            "production": {}
+            "production": {
+              "command": "cowsay",
+              "args": ["Builders are cool"]
+            }
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "demo-app"
 }

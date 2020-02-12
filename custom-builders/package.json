@@ -12,8 +12,9 @@
   },
   "devDependencies": {
     "@angular-devkit/architect": "latest",
-    "@angular-devkit/build-angular": "latest",
+    "@angular-devkit/build-angular": "0.900.1",
     "@angular-devkit/build-webpack": "0.900.1",
+    "@angular-devkit/core": "9.0.1",
     "@angular/compiler": "9.0.0",
     "@angular/compiler-cli": "9.0.0",
     "@types/karma": "3.0.6",

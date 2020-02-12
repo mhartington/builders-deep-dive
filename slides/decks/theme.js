@@ -55,11 +55,11 @@ export default {
       textAlign: 'center'
     },
     a: {
-      color: 'base0D',
+      color: 'base10',
       textDecoration: 'none',
       transition: "color 0.15s ease",
       ':hover': {
-        color: 'link'
+        color: 'base0D'
       },
       '::after': {
         content: '""',

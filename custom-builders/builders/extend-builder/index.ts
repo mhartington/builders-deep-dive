@@ -26,7 +26,7 @@ function extendExisitingBuilder(
   context: BuilderContext
 ): Observable<BuilderOutput> {
   const targetSpec = targetFromTargetString(options.browserTarget);
-  context.builder.builderName = 'browser';
+  // context.builder.builderName = 'browser';
   return forkJoin(
     from(context.getTargetOptions(targetSpec)),
     from(context.getBuilderNameForTarget(targetSpec))
