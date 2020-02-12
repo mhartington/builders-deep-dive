@@ -1,0 +1,34 @@
+{
+  "name": "@bionic/builders",
+  "version": "1.0.0",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "nyan-progress-webpack-plugin": "1.2.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/architect": "latest",
+    "@angular-devkit/build-angular": "latest",
+    "@angular-devkit/build-webpack": "0.900.1",
+    "@angular/compiler": "9.0.0",
+    "@angular/compiler-cli": "9.0.0",
+    "@types/karma": "3.0.6",
+    "@types/node": "13.7.0",
+    "@types/webpack": "4.32.0",
+    "@types/webpack-dev-server": "3.1.7",
+    "tslint": "^5.12.0",
+    "typescript": "3.7.5",
+    "typescript-tslint-plugin": "0.3.1"
+  },
+  "peerDependencies": {
+    "@angular-devkit/architect": "latest",
+    "@angular-devkit/build-angular": "latest",
+    "@angular/compiler": "9.0.0",
+    "@angular/compiler-cli": "9.0.0"
+  },
+  "builders": "./builders.json"
+}

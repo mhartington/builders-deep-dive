@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "allowUnreachableCode": false,
+    "declaration": true,
+    "importHelpers": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "pretty": true,
+    "strict": true,
+    "target": "es2017",
+    "lib": ["es2017"],
+    "plugins": [{ "name": "typescript-tslint-plugin" }]
+  },
+  "include": ["builders/**/*.ts"],
+  "exclude": ["node_modules", "**/__tests__/*.ts", "schematics/*/files"]
+}

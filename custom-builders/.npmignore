@@ -1,0 +1,9 @@
+# having this file excludes .gitignore entries
+
+tsconfig.json
+tslint.js
+.circleci
+node_modules
+*.ts
+!*.d.ts
+!schematics/*/files/**/*.ts

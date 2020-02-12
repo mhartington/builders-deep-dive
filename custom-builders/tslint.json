@@ -1,0 +1,6 @@
+{
+  "rules": {
+    "strict-boolean-conditions": false,
+    "no-null-keyword": false
+  }
+}
