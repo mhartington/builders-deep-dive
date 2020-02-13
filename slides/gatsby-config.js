@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: '/',
+  pathPrefix: '/ng-conf-2020',
     // pathPrefix: '/print',
 
   plugins: [
