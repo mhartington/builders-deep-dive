@@ -26,14 +26,13 @@ function extendExisitingBuilder(
   context: BuilderContext
 ): Observable<BuilderOutput> {
   const targetSpec = targetFromTargetString(options.browserTarget);
-  // context.builder.builderName = 'browser';
   return forkJoin(
     from(context.getTargetOptions(targetSpec)),
     from(context.getBuilderNameForTarget(targetSpec))
   ).pipe(
-    concatMap(([buildOptions, buildName]) =>
-      from(context.validateOptions(buildOptions, buildName))
-    ),
+    concatMap(([buildOptions, buildName]) => {
+      return from(context.validateOptions(buildOptions, buildName));
+    }),
     concatMap(finalOpts =>
       extendBuilder(executeBrowserBuilder)(finalOpts, context)
     )

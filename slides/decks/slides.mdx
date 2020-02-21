@@ -1,15 +1,16 @@
 import { CodeSurfer } from "code-surfer"
 import oceanicNext  from "./theme"
-import {Appear, Notes} from 'mdx-deck';
+import {Appear, Notes, Head} from 'mdx-deck';
 import 'prismjs/components/prism-shell-session'
 import { Video } from './components'
 export const theme = oceanicNext
 
-# Deep dive into CLI Builders
+<Head>
+  <title>Deep dive into CLI Builders</title>
+</Head>
 
-Mike Hartington | Ionic, Angular GDE
 
-[@mhartington](https://twitter.com/mhartington)
+<p></p>
 
 ---
 
@@ -23,6 +24,14 @@ Good!
 This is not about Ionic
 
 </Appear>
+
+---
+
+# Deep dive into CLI Builders
+
+Mike Hartington | Ionic, Angular GDE
+
+[@mhartington](https://twitter.com/mhartington)
 
 ---
 
@@ -105,9 +114,9 @@ Karma builder
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "options": {},
+          "options": {...},
           "configurations": {
-            "production": {}
+            "production": {...}
           }
         },
         "serve": {},
@@ -119,8 +128,10 @@ Karma builder
 ```
 
 
+```diff 5:11 subtitle="Our architect. High level settings"
+```
 
-```diff 6 subtitle="Where a builder gets called"
+```diff 6 subtitle="What builder gets called"
 ```
 
 ```diff 7 subtitle="Our options that get passed"
@@ -137,12 +148,34 @@ Karma builder
 
 ---
 
+
 ## Let's make a builder!
+
+---
+
+## Y Tho...
+- Integrate external tools
+- Customize existing systems
+
+<Appear>
+
+- Become a true 10X developer
+
+</Appear>
+
+---
+
+```shell
+mkdir custom-builders
+cd custom-builders
+npm init -y
+```
 
 ---
 
 
 <CodeSurfer>
+
 
 ```json title="package.json"
 {

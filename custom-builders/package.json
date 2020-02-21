@@ -11,10 +11,10 @@
     "nyan-progress-webpack-plugin": "1.2.0"
   },
   "devDependencies": {
-    "@angular-devkit/architect": "latest",
-    "@angular-devkit/build-angular": "0.900.1",
-    "@angular-devkit/build-webpack": "0.900.1",
-    "@angular-devkit/core": "9.0.1",
+    "@angular-devkit/architect": "0.900.2",
+    "@angular-devkit/build-angular": "0.900.2",
+    "@angular-devkit/build-webpack": "0.900.2",
+    "@angular-devkit/core": "9.0.2",
     "@angular/compiler": "9.0.0",
     "@angular/compiler-cli": "9.0.0",
     "@types/karma": "3.0.6",
@@ -23,7 +23,8 @@
     "@types/webpack-dev-server": "3.1.7",
     "tslint": "^5.12.0",
     "typescript": "3.7.5",
-    "typescript-tslint-plugin": "0.3.1"
+    "typescript-tslint-plugin": "0.3.1",
+    "webpack": "4.41.6"
   },
   "peerDependencies": {
     "@angular-devkit/architect": "latest",
