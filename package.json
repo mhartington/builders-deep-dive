@@ -1,0 +1,24 @@
+{
+  "name": "ng-conf-2020",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d slides/public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhartington/builders-deep-dive.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mhartington/builders-deep-dive/issues"
+  },
+  "homepage": "https://github.com/mhartington/builders-deep-dive#readme",
+  "dependencies": {
+    "gh-pages": "2.2.0"
+  }
+}
