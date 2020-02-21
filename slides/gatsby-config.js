@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: '/ng-conf-2020',
+  pathPrefix: '/builders-deep-dive',
   plugins: [
     'gatsby-plugin-catch-links',
     {
