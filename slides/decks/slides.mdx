@@ -9,29 +9,28 @@ export const theme = oceanicNext
   <title>Deep dive into CLI Builders</title>
 </Head>
 
-
-<p></p>
-
----
-
-## Have you heard about Ionic!?
-
+# So
 
 <Appear>
 
-Good!
+## Have you heard about Ionic!?
 
-This is not about Ionic
+## Good!
+
 
 </Appear>
 
 ---
 
+## This is not about Ionic
+
+---
+
 # Deep dive into CLI Builders
 
-Mike Hartington | Ionic, Angular GDE
 
-[@mhartington](https://twitter.com/mhartington)
+- Mike Hartington | Ionic, Angular GDE
+- [@mhartington](https://twitter.com/mhartington)
 
 ---
 
@@ -107,7 +106,7 @@ Karma builder
 
 <CodeSurfer>
 
-```json
+```json showNumbers
 {
   "projects": {
     "app": {
@@ -128,20 +127,20 @@ Karma builder
 ```
 
 
-```diff 5:11 subtitle="Our architect. High level settings"
+```diff 5:11 title="Our architect. High level settings"
 ```
 
-```diff 6 subtitle="What builder gets called"
+```diff 6 title="What builder gets called"
 ```
 
-```diff 7 subtitle="Our options that get passed"
+```diff 7 title="Our options that get passed"
 ```
 
-```diff 8:10 subtitle="Overrides for production"
+```diff 8:10 title="Overrides for production"
 ```
 
 
-```diff 6[23:59] subtitle="Package and builder lookup"
+```diff 6[23:59] title="Package and builder lookup"
 ```
 
 </CodeSurfer>
@@ -177,7 +176,7 @@ npm init -y
 <CodeSurfer>
 
 
-```json title="package.json"
+```json title="package.json" showNumbers
 {
   "name": "@bionic/builders",
   "version": "1.0.0",
@@ -198,13 +197,13 @@ npm init -y
 }
 ```
 
-```diff 4 subtitle="Our builder logic"
+```diff 4 title="Our builder logic"
 ```
 
-```diff 5 subtitle="Our scheme, to validate options"
+```diff 5 title="Our scheme, to validate options"
 ```
 
-```diff 6 subtitle="A description desciption"
+```diff 6 title="A description desciption"
 ```
 
 ```json 1:17
@@ -224,7 +223,7 @@ npm init -y
   }
 }
 
-"builder": "@bionic/builders:custom-builder"
+"builder": "@bionic/builders:command-builder"
 ```
 
 ```diff 2[12:27],17[13:28]
@@ -244,7 +243,7 @@ npm init -y
 <CodeSurfer>
 
 
-```typescript title="builders/command-builder/index"
+```typescript title="builders/command-builder/index" showNumbers
 export default createBuilder(commandBuilder);
 
 ```
@@ -254,7 +253,7 @@ export default createBuilder(commandBuilder);
 
 function commandBuilder(
     options: JsonObject, context: BuilderContext
-): Promise {
+): Promise<BuildEvent> {
 
 }
 ```
@@ -264,7 +263,7 @@ export default createBuilder(commandBuilder);
 
 function commandBuilder(
     options: JsonObject, context: BuilderContext
-): Promise {
+): Promise<BuildEvent> {
   const process = childProcess.spawn(
     options.command, options.args
   );
@@ -277,7 +276,7 @@ export default createBuilder(commandBuilder);
 
 function commandBuilder(
     options: JsonObject, context: BuilderContext
-): Promise {
+): Promise<BuildEvent> {
   const process = childProcess.spawn(
     options.command, options.args
   );
@@ -317,7 +316,7 @@ function commandBuilder(
 
 <CodeSurfer>
 
-```typescript title="./builders/extend-builder/index.ts"
+```typescript title="./builders/extend-builder/index.ts" showNumbers
 export default createBuilder(extendExisitingBuilder);
 
 function extendExisitingBuilder(
@@ -341,7 +340,7 @@ function extendExisitingBuilder(
 }
 ```
 
-```diff subtitle="Returns the target, builder, and config" 7:9
+```diff title="Returns the target, builder, and config" 7:9 subtitle="{ project:string, target:string, configuration:string }"
 ```
 
 
@@ -364,10 +363,10 @@ function extendExisitingBuilder(
 ```
 
 
-```diff subtitle="Get the options listed in angular.json" 12
+```diff title="Get the options listed in angular.json" 12
 ```
 
-```diff subtitle="Get the builder name we want to run" 13
+```diff title="Get the builder name we want to run" 13 subtitle="@angular-devkit/build-angular:browser"
 ```
 
 ```typescript
@@ -398,7 +397,7 @@ function extendExisitingBuilder(
 ```
 
 
-```diff subtitle="Validates public options with internals" 17:20
+```diff title="Validates public options with internals" 17:20
 ```
 
 ```typescript
@@ -477,7 +476,7 @@ export function extendBuilder(builder) {
 }
 ```
 
-```ts
+```ts title="~=[,,_,,]:3"
 export default createBuilder(extendExisitingBuilder);
 
 function extendExisitingBuilder(
@@ -574,7 +573,7 @@ export function extendBuilder(builder) {
 
 ---
 
-### So, what have we learned
+## So, what have we learned
 
 ---
 
@@ -627,9 +626,9 @@ Plus there's type to follow!
 
 ## Some great example
 - [mgechev/cli-builders-demo](https://github.com/mgechev/cli-builders-demo)
-- [@angular-builders/jest](https://www.npmjs.com/package/@angular-builders/jest)
-- [@angular-builders/timestamp](https://www.npmjs.com/package/@angular-builders/timestamp)
 - [@angular-builders/custom-webpack](https://www.npmjs.com/package/@angular-builders/custom-webpack)
+- [Manfred's ngx-build-plus](https://github.com/manfredsteyer/ngx-build-plus)
+- [Angular Schule angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages)
 
 ---
 
@@ -646,6 +645,10 @@ Plus there's type to follow!
 
 
 ## Thank you
+
+<br/>
+
+#### [@mhartington](https://twitter.com/mhartington)
 
 <br/>
 

@@ -1,5 +1,5 @@
-
-export default {
+import { base } from '@code-surfer/themes';
+const theme =  {
   fontWeights: {
     body: 300,
     heading: 100,
@@ -30,7 +30,7 @@ export default {
   styles: {
     Slide: {
       fontFamily: 'body',
-      fontSize: [4, 5, 6, 7],
+      fontSize: [4, 5, 6, 7]
     },
     h1: {
       margin: '0 0 10px'
@@ -57,7 +57,7 @@ export default {
     a: {
       color: 'base10',
       textDecoration: 'none',
-      transition: "color 0.15s ease",
+      transition: 'color 0.15s ease',
       ':hover': {
         color: 'base0D'
       },
@@ -69,11 +69,11 @@ export default {
         backgroundColor: 'base0D',
         opacity: 0,
         transform: 'translate3D(0,10px, 0)',
-        transition: 'opacity 0.3s, transform 0.3s',
+        transition: 'opacity 0.3s, transform 0.3s'
       },
       ':hover::after': {
         opacity: 1,
-        transform: 'translate3D(0,0,0)',
+        transform: 'translate3D(0,0,0)'
       }
     },
     ul: {
@@ -85,6 +85,7 @@ export default {
       margin: '10px 0 '
     },
     CodeSurfer: {
+      ...base.styles.CodeSurfer,
       pre: {
         color: 'base10',
         backgroundColor: 'base00'
@@ -95,59 +96,49 @@ export default {
       },
       tokens: {
         'comment prolog cdata': {
-          color: 'base03' /* base03 */
+          color: 'base03'
         },
-
         'entity string': {
-          color: 'base04' /* base04 */
+          color: 'base04'
         },
-
         punctuation: {
-          color: 'base05' /* base05 */
+          color: 'base05'
         },
-
         'variable tag operator deleted ': {
-          color: 'base08' /* base08 */
+          color: 'base08'
         },
-
         'property number boolean constant url': {
-          color: 'base0A' /* base09 */
+          color: 'base0A'
         },
         'maybe-class-name': {
           color: 'base0C',
           fontStyle: 'italic'
         },
-
         'class-name bold': {
-          color: 'base0A' /* base0A */
+          color: 'base0A'
         },
-
         'string symbol attr-value inserted atrule': {
-          color: 'base0B' /* base0B */
+          color: 'base0B'
         },
-
         'regex important': {
-          color: 'base0C' /* base0C */
+          color: 'base0C'
         },
-
         'function attr-name': {
-          color: 'base0D' /* base0D */
+          color: 'base0D'
         },
-
         'keyword selector italic char builtin': {
-          color: 'base0E' /* base0E */
+          color: 'base0E'
         },
-
         doctype: {
-          color: 'base0F' /* base0F */
+          color: 'base0F'
         },
-
         'important bold': {
           fontWeight: 'bold'
         },
         italic: {
           fontStyle: 'italic'
-        }
+        },
+        'line-number': {opacity: 0.65, userSelect: "none"}
       },
       title: {
         backgroundColor: 'base00',
@@ -158,8 +149,11 @@ export default {
         color: 'base10'
       },
       unfocused: {
-        opacity: 0.1,
+        opacity: 0.1
       }
     }
   }
+};
+export default {
+  ...theme
 };
