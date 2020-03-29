@@ -4,7 +4,7 @@ export function Video(props) {
   return (
     <video
       src={props.src}
-      autoPlay={false}
+      autoPlay={true}
       controls={true}
       style={{
         width: '90%',

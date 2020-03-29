@@ -1,9 +1,82 @@
-import { base } from '@code-surfer/themes';
-const theme =  {
+const oceanicNext = {
+  pre: {
+    color: 'base10',
+    backgroundColor: 'base00',
+    fontFamily: '"IBM Plex Mono" !important'
+  },
+  code: {
+    color: 'base10',
+    backgroundColor: 'base00',
+    fontFamily: '"IBM Plex Mono" !important'
+  },
+  tokens: {
+    'comment prolog cdata': {
+      color: 'base03'
+    },
+    'entity string': {
+      color: 'base04'
+    },
+    punctuation: {
+      color: 'base05'
+    },
+    'variable tag operator deleted ': {
+      color: 'base08'
+    },
+    'property number boolean constant url': {
+      color: 'base0A'
+    },
+    'maybe-class-name': {
+      color: 'base0C',
+      fontStyle: 'italic'
+    },
+    'class-name bold': {
+      color: 'base0A'
+    },
+    'string symbol attr-value inserted atrule': {
+      color: 'base0B'
+    },
+    'regex important': {
+      color: 'base0C'
+    },
+    'function attr-name': {
+      color: 'base0D'
+    },
+    'keyword selector italic char builtin': {
+      color: 'base0E'
+    },
+    doctype: {
+      color: 'base0F'
+    },
+    'important bold': {
+      fontWeight: 'bold'
+    },
+    italic: {
+      fontStyle: 'italic'
+    },
+    'line-number': { opacity: 0.65, userSelect: 'none' }
+  },
+  title: {
+    backgroundColor: 'base00',
+    color: 'base10'
+  },
+  subtitle: {
+    backgroundColor: 'base00',
+    color: 'base10'
+  },
+  unfocused: {
+    opacity: 0.1
+  }
+};
+const theme = {
   fontWeights: {
     body: 300,
     heading: 100,
     bold: 500
+  },
+  googleFont: 'https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Inter',
+  fonts: {
+    body: '"Inter"',
+    monospace: '"IBM Plex Mono"'
   },
   colors: {
     background: '#1B2B34',
@@ -28,6 +101,9 @@ const theme =  {
     base10: '#ffffff'
   },
   styles: {
+    CodeSurfer: {
+      ...oceanicNext
+    },
     Slide: {
       fontFamily: 'body',
       fontSize: [4, 5, 6, 7]
@@ -84,73 +160,9 @@ const theme =  {
       textAlign: 'center',
       margin: '10px 0 '
     },
-    CodeSurfer: {
-      ...base.styles.CodeSurfer,
-      pre: {
-        color: 'base10',
-        backgroundColor: 'base00'
-      },
-      code: {
-        color: 'base10',
-        backgroundColor: 'base00'
-      },
-      tokens: {
-        'comment prolog cdata': {
-          color: 'base03'
-        },
-        'entity string': {
-          color: 'base04'
-        },
-        punctuation: {
-          color: 'base05'
-        },
-        'variable tag operator deleted ': {
-          color: 'base08'
-        },
-        'property number boolean constant url': {
-          color: 'base0A'
-        },
-        'maybe-class-name': {
-          color: 'base0C',
-          fontStyle: 'italic'
-        },
-        'class-name bold': {
-          color: 'base0A'
-        },
-        'string symbol attr-value inserted atrule': {
-          color: 'base0B'
-        },
-        'regex important': {
-          color: 'base0C'
-        },
-        'function attr-name': {
-          color: 'base0D'
-        },
-        'keyword selector italic char builtin': {
-          color: 'base0E'
-        },
-        doctype: {
-          color: 'base0F'
-        },
-        'important bold': {
-          fontWeight: 'bold'
-        },
-        italic: {
-          fontStyle: 'italic'
-        },
-        'line-number': {opacity: 0.65, userSelect: "none"}
-      },
-      title: {
-        backgroundColor: 'base00',
-        color: 'base10'
-      },
-      subtitle: {
-        backgroundColor: 'base00',
-        color: 'base10'
-      },
-      unfocused: {
-        opacity: 0.1
-      }
+
+    blockquote: {
+      fontStyle: 'italic'
     }
   }
 };
