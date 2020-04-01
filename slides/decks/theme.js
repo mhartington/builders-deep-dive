@@ -2,12 +2,10 @@ const oceanicNext = {
   pre: {
     color: 'base10',
     backgroundColor: 'base00',
-    fontFamily: '"IBM Plex Mono" !important'
   },
   code: {
     color: 'base10',
     backgroundColor: 'base00',
-    fontFamily: '"IBM Plex Mono" !important'
   },
   tokens: {
     'comment prolog cdata': {
