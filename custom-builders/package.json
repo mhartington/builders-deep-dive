@@ -11,26 +11,26 @@
     "nyan-progress-webpack-plugin": "1.2.0"
   },
   "devDependencies": {
-    "@angular-devkit/architect": "0.900.2",
-    "@angular-devkit/build-angular": "0.900.2",
-    "@angular-devkit/build-webpack": "0.900.2",
-    "@angular-devkit/core": "9.0.2",
-    "@angular/compiler": "9.0.0",
-    "@angular/compiler-cli": "9.0.0",
+    "@angular-devkit/architect": "^0.1100.2",
+    "@angular-devkit/build-angular": "^0.1100.2",
+    "@angular-devkit/build-webpack": "^0.1100.2",
+    "@angular-devkit/core": "^11.0.2",
+    "@angular/compiler": "^11.0.2",
+    "@angular/compiler-cli": "^11.0.2",
     "@types/karma": "3.0.6",
     "@types/node": "13.7.0",
     "@types/webpack": "4.32.0",
     "@types/webpack-dev-server": "3.1.7",
     "tslint": "^5.12.0",
-    "typescript": "3.7.5",
+    "typescript": "^4.0.5",
     "typescript-tslint-plugin": "0.3.1",
     "webpack": "4.41.6"
   },
   "peerDependencies": {
     "@angular-devkit/architect": "latest",
     "@angular-devkit/build-angular": "latest",
-    "@angular/compiler": "9.0.0",
-    "@angular/compiler-cli": "9.0.0"
+    "@angular/compiler": "11.0.0",
+    "@angular/compiler-cli": "11.0.0"
   },
   "builders": "./builders.json"
 }
