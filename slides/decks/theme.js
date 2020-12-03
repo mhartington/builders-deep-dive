@@ -1,11 +1,14 @@
+import 'victormono'
 const oceanicNext = {
   pre: {
     color: 'base10',
     backgroundColor: 'base00',
+    fontFamily: '"Victor Mono"'
   },
   code: {
     color: 'base10',
     backgroundColor: 'base00',
+    fontFamily: '"Victor Mono"'
   },
   tokens: {
     'comment prolog cdata': {
@@ -74,7 +77,7 @@ const theme = {
   googleFont: 'https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Inter',
   fonts: {
     body: '"Inter"',
-    monospace: '"IBM Plex Mono"'
+    monospace: '"Victor Mono"'
   },
   colors: {
     background: '#1B2B34',
@@ -107,7 +110,8 @@ const theme = {
       fontSize: [4, 5, 6, 7]
     },
     h1: {
-      margin: '0 0 10px'
+      margin: '0 0 10px',
+      textAlign: 'center',
     },
     h2: {
       margin: '0 0 10px'
@@ -158,7 +162,6 @@ const theme = {
       textAlign: 'center',
       margin: '10px 0 '
     },
-
     blockquote: {
       fontStyle: 'italic'
     }
