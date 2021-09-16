@@ -6,12 +6,11 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "pretty": true,
-    "strict": true,
+    "strict": false,
     "target": "es2017",
-    "lib": ["es2017"],
-    "plugins": [{ "name": "typescript-tslint-plugin" }]
+    "lib": ["es2017"]
   },
   "include": ["builders/**/*.ts"],
   "exclude": ["node_modules", "**/__tests__/*.ts", "schematics/*/files"]

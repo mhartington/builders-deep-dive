@@ -1,8 +1,9 @@
 import { CodeSurfer } from "code-surfer"
 import oceanicNext  from "./theme"
 import {Appear, Notes, Head} from 'mdx-deck';
+
 import 'prismjs/components/prism-shell-session'
-import { Video } from './components'
+
 export const theme = oceanicNext
 
 <Head>
@@ -33,9 +34,9 @@ export const theme = oceanicNext
 ---
 
 ## CLI Builders
-- Mysterious
-- Behind the scenes
-- Simple principle
+- Tooling behind the scene
+- Simple principle; but extensible
+- Really, just a function
 
 <Notes>
 
@@ -89,7 +90,7 @@ Browser builder
 $ ng serve
 Dev-server builder
 $ ng test
-Karma builder
+Test builder
 ```
 
 </CodeSurfer>
@@ -145,7 +146,11 @@ Karma builder
 
 ---
 
-## Y Tho...
+<img src="https://i.kym-cdn.com/entries/icons/original/000/022/978/yNlQWRM.jpg" alt="" style="object-fit: cover; width: 100%; height: 100%" />
+
+---
+
+## y tho indeed
 - Integrate external tools
 - Customize existing systems
 
@@ -468,7 +473,7 @@ export function extendBuilder(builder) {
 }
 ```
 
-```ts title="~=[,,_,,]:3"
+```ts title="build [====&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp] 46%"
 export default createBuilder(extendExisitingBuilder);
 
 function extendExisitingBuilder(
@@ -504,7 +509,7 @@ export function extendBuilder(builder) {
   return (options: any, context: BuilderContext) => {
     return builder(options, context, {
       webpackConfiguration(config) {
-        config.plugins.push(new NyanProgressPlugin());
+        config.plugins.push(new ProgressBarPlugin());
         return config;
       }
     });
@@ -548,7 +553,7 @@ export function extendBuilder(builder) {
   return (options: any, context: BuilderContext) => {
     return builder(options, context, {
       webpackConfiguration(config) {
-        config.plugins.push(new NyanProgressPlugin());
+        config.plugins.push(new ProgressBarPlugin());
         return config;
       }
     });

@@ -1,22 +1,15 @@
 import {
   createBuilder,
   BuilderContext,
-  BuilderOutput,
-  targetFromTargetString
+  targetFromTargetString,
 } from '@angular-devkit/architect';
-import {
-  executeBrowserBuilder,
-  ExecutionTransformer
-} from '@angular-devkit/build-angular';
+import { executeBrowserBuilder } from '@angular-devkit/build-angular';
 import { ExtendBuilder } from './schema';
 import { Observable, forkJoin, from } from 'rxjs';
 import { concatMap } from 'rxjs/operators';
 import { JsonObject } from '@angular-devkit/core';
-
 import { Configuration } from 'webpack';
-
-const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
-
+var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 export default createBuilder<JsonObject & ExtendBuilder>(
   extendExisitingBuilder
 );
@@ -24,37 +17,33 @@ export default createBuilder<JsonObject & ExtendBuilder>(
 function extendExisitingBuilder(
   options: ExtendBuilder,
   context: BuilderContext
-): Observable<BuilderOutput> {
+): Observable<any> {
   const targetSpec = targetFromTargetString(options.browserTarget);
-  return forkJoin(
+  return forkJoin([
     from(context.getTargetOptions(targetSpec)),
-    from(context.getBuilderNameForTarget(targetSpec))
-  ).pipe(
+    from(context.getBuilderNameForTarget(targetSpec)),
+  ]).pipe(
     concatMap(([buildOptions, buildName]) => {
       return from(context.validateOptions(buildOptions, buildName));
     }),
-    concatMap(finalOpts =>
-      extendBuilder(executeBrowserBuilder)(finalOpts, context)
+    concatMap((finalOpts) =>
+      extendBuilder(executeBrowserBuilder)(
+        { ...finalOpts, progress: false },
+        context
+      )
     )
   );
 }
 
-interface BuilderTransforms {
-  webpackConfiguration?: ExecutionTransformer<Configuration>;
-}
-type Builder<T, R> = (
-  options: T,
-  context: BuilderContext,
-  transforms?: BuilderTransforms
-) => Observable<R>;
-
-export function extendBuilder<T, R>(builder: Builder<T, R>) {
+export function extendBuilder(
+  builder: Function
+): (options: JsonObject, context: BuilderContext) => any {
   return (options: any, context: BuilderContext) => {
     return builder(options, context, {
-      webpackConfiguration(config) {
-        config.plugins!.push(new NyanProgressPlugin());
-        return config;
-      }
+      webpackConfiguration(oldConfig: Configuration) {
+        oldConfig.plugins.push(new ProgressBarPlugin());
+        return oldConfig;
+      },
     });
   };
 }
