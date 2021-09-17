@@ -23,31 +23,22 @@ export const theme = oceanicNext
 
 ---
 
-## This is not about Ionic
+### This is not about Ionic
 
 ---
 
 # Deep dive into <br/> Angular Builders
 
-- Mike Hartington | Ionic, Angular GDE
+
+- Mike Hartington
 - [@mhartington](https://twitter.com/mhartington)
+
 ---
 
 ## CLI Builders
 - Tooling behind the scene
 - Simple principle; but extensible
-- Really, just a function
-
-<Notes>
-
-Builders to me are the unsung hero of the CLI. if you ask a room of angular developers if they know anything about builders, chances are they probably will say no.
-
-However, we use builders every day without realizing it. They're the key part that makes the angular CLI functional, and also extensible.
-
-And they operate on simple principle, given a set of options, run a program against a workspace
-
-</Notes>
-
+- **THE BEST FEATURE OF ANGULAR**
 ---
 
 
@@ -98,7 +89,6 @@ Test builder
 ---
 
 > "Given a set of options, <br/> run a function and return the results"
-
 
 ---
 
@@ -178,6 +168,14 @@ npm init -y
 {
   "name": "@bionic/builders",
   "version": "1.0.0",
+  ....
+}
+```
+
+```json title="Makes our builders public"
+{
+  "name": "@bionic/builders",
+  "version": "1.0.0",
   "builders": "./builders.json",
   ....
 }
@@ -231,6 +229,9 @@ npm init -y
 ```
 
 ```diff 2[12:27],9[6:20],10,17[13:28,30:44]
+```
+
+```diff 10
 ```
 
 </CodeSurfer>

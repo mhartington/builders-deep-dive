@@ -9,20 +9,18 @@ function commandBuilder(
   options: CommandBuilder,
   context: BuilderContext
 ): Promise<any> {
-  const process = childProcess.spawn(
-    options.command,
-    options.args,
-    { stdio: 'pipe' }
-  );
-  process.stdout.on('data', data => {
+  const process = childProcess.spawn(options.command, options.args, {
+    stdio: 'pipe',
+  });
+  process.stdout.on('data', (data) => {
     context.logger.info(data.toString());
   });
-  process.stderr.on('data', data => {
+  process.stderr.on('data', (data) => {
     context.logger.error(data.toString());
   });
 
-  return new Promise(resolve => {
-    process.on('close', code => {
+  return new Promise((resolve) => {
+    process.on('close', (code) => {
       resolve({ success: code === 0 });
     });
   });
