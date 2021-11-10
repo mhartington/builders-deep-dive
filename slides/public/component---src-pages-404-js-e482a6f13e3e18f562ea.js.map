@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/404.js"],"names":["to"],"mappings":"0IAKA,UAFqB,kBAAM,wBAAUA,GAAG","file":"component---src-pages-404-js-e482a6f13e3e18f562ea.js","sourcesContent":["import React from 'react';\nimport { Redirect } from '@reach/router';\n\nconst NotFoundPage = () => <Redirect to=\"/\" />;\n\nexport default NotFoundPage;\n"],"sourceRoot":""}

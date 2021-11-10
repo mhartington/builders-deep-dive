@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "sync": "rsync -avuP --exclude .git --exclude node_modules ../custom-builders/ node_modules/@bionic/",
+    "sync": "mkdir -p node_modules/@bionic && rsync -avuP --exclude .git --exclude node_modules ../builders-mono-repo/dist/packages/builders ./node_modules/@bionic",
     "test": "ng test"
   },
   "private": true,
@@ -19,9 +19,13 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "cheerio": "^1.0.0-rc.10",
+    "nyan-styled-progress-webpack-plugin": "^2.0.2",
     "progress-bar-webpack-plugin": "^2.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
+    "webpack-dashboard": "^3.3.6",
+    "ws": "^8.2.3",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

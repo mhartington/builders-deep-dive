@@ -1,7 +1,8 @@
-import { createBuilder, BuilderContext } from '@angular-devkit/architect';
+import type { BuilderContext } from '@angular-devkit/architect';
+import { createBuilder } from '@angular-devkit/architect';
 import * as childProcess from 'child_process';
 
-import { CommandBuilder } from './schema';
+import type { CommandBuilder } from './schema';
 
 export default createBuilder<any>(commandBuilder);
 

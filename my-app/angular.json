@@ -89,8 +89,21 @@
             "scripts": []
           }
         },
+        "extend-serve": {
+          "builder": "@bionic/builders:extend-serve",
+          "options": {
+            "devServerTarget": "app:serve",
+            "port": 4200,
+            "host": "0.0.0.0"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "app:serve:production"
+            }
+          }
+        },
         "extend-build": {
-          "builder": "@bionic:extend-build",
+          "builder": "@bionic/builders:extend-build",
           "options": {
             "browserTarget": "app:build"
           },
@@ -101,7 +114,7 @@
           }
         },
         "command-build": {
-          "builder": "@bionic:custom-build",
+          "builder": "@bionic/builders:custom-build",
           "options": {
             "command": "ls",
             "args": ["-la"]

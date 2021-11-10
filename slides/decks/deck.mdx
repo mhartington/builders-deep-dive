@@ -10,28 +10,20 @@ export const theme = oceanicNext
   <title>Deep dive into CLI Builders</title>
 </Head>
 
-# So
-
-<Appear>
-
-## Have you heard about Ionic!?
-
-## Good!
-
-
-</Appear>
-
----
-
-### This is not about Ionic
-
----
 
 # Deep dive into <br/> Angular Builders
 
 
 - Mike Hartington
 - [@mhartington](https://twitter.com/mhartington)
+
+---
+
+## Have you heard about Ionic!?
+
+---
+
+### This is not about Ionic
 
 ---
 
@@ -212,8 +204,8 @@ npm init -y
 {
   "builders": {
     "command-builder": {
-      "implementation": "./builders/command-builder/index",
-      "schema": "./builders/command-builder/schema.json",
+      "implementation": "./src/command-builder/index",
+      "schema": "./src/command-builder/schema.json",
       "description": "Run a shell command"
     }
   }
@@ -324,7 +316,7 @@ function extendExisitingBuilder(
 }
 ```
 
-```typescript
+```typescript title="Returns the target, builder, and config" subtitle="{ project:string, target:string, configuration:string }"
 export default createBuilder(extendExisitingBuilder);
 
 function extendExisitingBuilder(
@@ -336,9 +328,6 @@ function extendExisitingBuilder(
   );
 
 }
-```
-
-```diff title="Returns the target, builder, and config" 7:9 subtitle="{ project:string, target:string, configuration:string }"
 ```
 
 
@@ -474,7 +463,7 @@ export function extendBuilder(builder) {
 }
 ```
 
-```ts title="build [====&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp] 46%"
+```ts title="~=[,,_,,]:3"
 export default createBuilder(extendExisitingBuilder);
 
 function extendExisitingBuilder(
@@ -510,7 +499,7 @@ export function extendBuilder(builder) {
   return (options: any, context: BuilderContext) => {
     return builder(options, context, {
       webpackConfiguration(config) {
-        config.plugins.push(new ProgressBarPlugin());
+        config.plugins.push(new NyanStyledProgressPlugin());
         return config;
       }
     });
@@ -554,7 +543,7 @@ export function extendBuilder(builder) {
   return (options: any, context: BuilderContext) => {
     return builder(options, context, {
       webpackConfiguration(config) {
-        config.plugins.push(new ProgressBarPlugin());
+        config.plugins.push(new NyanStyledProgressPlugin());
         return config;
       }
     });
@@ -570,14 +559,15 @@ export function extendBuilder(builder) {
 
 ---
 
+### Another One
+
+---
+
 ## So, what have we learned
 
 ---
 
-- For the most part, builders aren't complicated
-
----
-
+- Complex or Simple: Can be both
 - The real work is finding out what APIs you need
 - Mostly driven by the `@angular-devkit`
 - Can be a bit trial-and-error
@@ -588,7 +578,7 @@ export function extendBuilder(builder) {
 
 <CodeSurfer>
 
-```ts subtitle="~820 LOC, plus imports and utils"  title="@angular-devkit/build-angular:browser"
+```ts subtitle="~400 LOC, plus imports and utils"  title="@angular-devkit/build-angular:browser"
 export function buildWebpackBrowser(
   options: BrowserBuilderSchema,
   context: BuilderContext,

@@ -1,0 +1,42 @@
+{
+  "version": 2,
+  "projects": {
+    "builders": {
+      "root": "packages/builders",
+      "sourceRoot": "packages/builders/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/workspace:tsc",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/packages/builders",
+            "main": "packages/builders/src/index.ts",
+            "tsConfig": "packages/builders/tsconfig.lib.json",
+            "assets": [
+              "packages/builders/*.md",
+              "packages/builders/builders.json",
+              {
+                "input": "packages/builders/assets",
+                "glob": "*",
+                "output": "assets"
+              },
+              {
+                "input": "packages/builders/src",
+                "glob": "**/schema.*",
+                "output": "src"
+              }
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["packages/builders/**/*.ts"]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "builders": {
+    "custom-build": {
+      "implementation": "./src/command-builder/index",
+      "schema": "./src/command-builder/schema.json",
+      "description": "Run a shell command"
+    },
+    "extend-build": {
+      "implementation": "./src/extend-builder/index",
+      "schema": "./src/extend-builder/schema.json",
+      "description": "Extend an Existing builder"
+    },
+    "extend-serve": {
+      "implementation": "./src/extend-serve/index",
+      "schema": "./src/extend-serve/schema.json",
+      "description": "Extend an Existing devserver"
+    }
+  }
+}

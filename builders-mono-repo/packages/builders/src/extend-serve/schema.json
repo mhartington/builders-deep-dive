@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "properties": {
+    "consolelogs": {
+      "type": "boolean",
+      "description": "Print console logs to the terminal."
+    },
+    "consolelogsPort": {
+      "type": "number",
+      "description": "Port for console log server.",
+      "default": 53703
+    },
+    "devServerTarget": {
+      "type": "string",
+      "description": "Target to use for serve."
+    },
+    "ssl": {
+      "type": "boolean",
+      "description": "Serve using HTTPS.",
+      "default": false
+    },
+    "port": {
+      "type": "number",
+      "description": "Port to listen on.",
+      "default": 4200
+    },
+    "host": {
+      "type": "string",
+      "description": "Host to listen on.",
+      "default": "localhost"
+    },
+    "sourceMap": {
+      "type": "boolean",
+      "description": "Create source-map file"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["devServerTarget"]
+}
